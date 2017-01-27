@@ -1,13 +1,19 @@
 ---
 title: "Reproducible research concepts and tools, 2017"
 author: "Vincent J. Carey, stvjc at channing.harvard.edu"
-date: "February 2015"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
   ioslides_presentation:
     incremental: false
     fig_height: 4
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
 runtime: shiny
 ---
+title: "MultiAssayExperiment: The Integrative Bioconductor Container"
+author: "MultiAssay Special Interest Group"
+
+
 
 ## Overview
 ### Key concepts
