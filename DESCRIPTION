@@ -4,7 +4,8 @@ Version: 0.0.0
 Author: Vince Carey
 Description: Illustrates some reproducible research disciplines.
 Suggests:
-Depends: 
+Depends: knitr, rmarkdown
 Maintainer: VJ Carey <stvjc@channing.harvard.edu>
+VignetteBuilder: knitr
 License: Artistic-2.0
 LazyLoad: yes
