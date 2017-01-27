@@ -4,9 +4,9 @@ author: "Vincent J. Carey, stvjc at channing.harvard.edu"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output: html_document
 vignette: >
-  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEngine{knitr::knitr}
 ---
-
+%\VignetteIndexEntry{Repr notes}
 ## Overview
 ### Key concepts
 - Accessible versioned data
