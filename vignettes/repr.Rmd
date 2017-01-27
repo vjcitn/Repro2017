@@ -1,0 +1,43 @@
+---
+title: "Reproducible research concepts and tools, 2017"
+author: "Vincent J. Carey, stvjc at channing.harvard.edu"
+date: "February 2015"
+output:
+  ioslides_presentation:
+    incremental: false
+    fig_height: 4
+runtime: shiny
+---
+
+## Overview
+### Key concepts
+- Accessible versioned data
+    - Authentication and validity
+- Accessible versioned software
+    - Reliability through continuous integration
+- Workflows that produce key inferences
+
+### Aims
+- Reliability and efficiency in the lab
+- Reliability and efficiency of dissemination, uptake, and extension
+- Foster refinement of inferences, faithfully implement a vision of open science
+
+## Accessible data
+### Local access and management
+- Protocol
+- Self-description
+- Discovery
+- Evolution through revision
+
+### Global access and management
+- Cloud: democratize access to data
+- Discovery problem
+- "Move computation to the data"
+
+## Versioned data
+### "File" characteristics must be recorded and sufficiently rich
+### Audit trail of changes to file contents
+### Determine provenance of a file derived from another file
+### Propagate durable information about data provenance
+### More general data resources (distributed files, streams)
+
