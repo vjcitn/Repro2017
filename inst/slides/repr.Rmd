@@ -8,10 +8,6 @@ output:
     fig_height: 4
 runtime: shiny
 ---
-title: "MultiAssayExperiment: The Integrative Bioconductor Container"
-author: "MultiAssay Special Interest Group"
-
-
 
 ## Overview
 ### Key concepts
