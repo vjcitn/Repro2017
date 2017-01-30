@@ -11,3 +11,5 @@ The American Statistical Association has issued a [statement on reproducibility 
 The National Academy of Sciences offers a free PDF reporting a [2016 workshop on statistical challenges in assessing reproducibility](https://www.nap.edu/catalog/21915/statistical-challenges-in-assessing-and-fostering-the-reproducibility-of-scientific-results).
 
 In 2012 the Brown University Institute for Computational and Experimental Research in Mathematics had a conference on [Reproducibility in Computational and Experimental Mathematics](https://icerm.brown.edu/tw12-5-rcem/). 
+
+Daniel Kahneman's [concept of "replication etiquette"](https://www.scribd.com/document/225285909/Kahneman-Commentary) includes rules for engaging research originators by those proposing replication studies.
