@@ -13,3 +13,6 @@ The National Academy of Sciences offers a free PDF reporting a [2016 workshop on
 In 2012 the Brown University Institute for Computational and Experimental Research in Mathematics had a conference on [Reproducibility in Computational and Experimental Mathematics](https://icerm.brown.edu/tw12-5-rcem/). 
 
 Daniel Kahneman's [concept of "replication etiquette"](https://www.scribd.com/document/225285909/Kahneman-Commentary) includes rules for engaging research originators by those proposing replication studies.
+
+The Nature publishing system guide for authors includes policies on [data and code availability] (http://www.nature.com/authors/policies/availability.html).  In 2014, some R-centric code repositories
+were (specifically endorsed)[http://www.nature.com/ng/journal/v46/n1/full/ng.2869.html].
