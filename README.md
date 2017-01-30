@@ -14,5 +14,5 @@ In 2012 the Brown University Institute for Computational and Experimental Resear
 
 Daniel Kahneman's [concept of "replication etiquette"](https://www.scribd.com/document/225285909/Kahneman-Commentary) includes rules for engaging research originators by those proposing replication studies.
 
-The Nature publishing system guide for authors includes policies on [data and code availability] (http://www.nature.com/authors/policies/availability.html).  In 2014, some R-centric code repositories
-were (specifically endorsed)[http://www.nature.com/ng/journal/v46/n1/full/ng.2869.html].
+The Nature publishing system guide for authors includes policies on [data and code availability] (http://www.nature.com/authors/policies/availability.html).  In 2014, two R-centric code repositories
+were [specifically endorsed](http://www.nature.com/ng/journal/v46/n1/full/ng.2869.html).
