@@ -29,6 +29,6 @@ A paper on an [interactive data/code portal](https://www-ncbi-nlm-nih-gov.ezp-pr
 
 Daniel Kahneman's [concept of "replication etiquette"](https://www.scribd.com/document/225285909/Kahneman-Commentary) includes rules for engaging research originators by those proposing replication studies.
 
-Containers like those defined in the docker infrastructure are regarded as useful for reproucibility.  [Caveats exist](https://thehftguy.com/2016/11/01/docker-in-production-an-history-of-failure/).
+Containers like those defined in the docker infrastructure are regarded as useful for reproucibility.  While it is a moving target, [caveats](https://thehftguy.com/2016/11/01/docker-in-production-an-history-of-failure/) [exist](http://catern.com/posts/docker.html).
 
 
