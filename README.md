@@ -17,6 +17,8 @@ In 2012 the Brown University Institute for Computational and Experimental Resear
 
 The Institute of Medicine published a report on [sharing clinical trial data](https://www.nap.edu/catalog/18998/sharing-clinical-trial-data-maximizing-benefits-minimizing-risk).
 
+SAMSI had a [Bioinformatics Workshop on Reproducibility in 2014](https://www.samsi.info/programs-and-activities/research-workshops/2014-15-bioinformatics-opening-workshop-september-8-12-2014/), and provides a report on 2006 meeting of the [SAMSI working group on reproducibility](https://www.samsi.info/wp-content/uploads/2010/09/MultRep-Final-Report.pdf)
+
 ## Publisher outlooks
 
 The Nature publishing system guide for authors includes policies on [data and code availability] (http://www.nature.com/authors/policies/availability.html).  In 2014, two R-centric code repositories
