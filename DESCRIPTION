@@ -1,6 +1,6 @@
 Package: Repro2017
 Title: Illustrating some reproducible research disciplines
-Version: 0.0.0
+Version: 0.0.1
 Author: Vince Carey
 Description: Illustrates some reproducible research disciplines.
 Suggests:
