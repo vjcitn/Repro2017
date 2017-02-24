@@ -10,7 +10,7 @@ vignette: >
 
 ## Basic definitions
 
-1) Analysis = software + data + environment 
+1) Analysis = software + data + environment + invocations
 
 2) Reproducible analysis = analysis that can be carried out by independent parties
 
@@ -19,7 +19,7 @@ vignette: >
 4) Study = Design + implementation + analysis
 
 5) Replicable study = A study that, when executed by independent parties,
-produces interpretations that are statistically compatible
+produces statistically compatible interpretations
 
 ## Open questions
 
@@ -29,7 +29,7 @@ produces interpretations that are statistically compatible
 
 3) What are independent variations on an analysis and why are they important?
 
-4) When are two interpretations of related or identical studies statistically compatible?
+4) When are two interpretations of related or identical studies statistically compatible?  Reformulate in terms of the standards of replicability for a given field.  Example: GWAS catalog concept of replicated finding.
 
 
 ## The three themes underlying reproducibility research
