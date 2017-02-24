@@ -1,1 +1,7 @@
-func1 = function(x) x^2
+#' Show slides in the browser.
+#' @export
+
+viewSlides = function() {
+   requireNamespace("shiny")
+   run(dir(system.file("slides", package="Repro2017"), full=TRUE))
+  }

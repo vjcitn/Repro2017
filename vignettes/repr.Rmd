@@ -5,6 +5,7 @@ date: "`r format(Sys.time(), '%B %d, %Y')`"
 output: html_document
 vignette: >
   %\VignetteEngine{knitr::rmarkdown}
+%\VignetteIndexEntry{Repr notes}
 ---
 
 ## Basic definitions
@@ -41,6 +42,7 @@ to diminish risk of analyses that are not reproducible
 3) doing 1) and 2) in ways that are cost-effective
 
 
+
 ## Overview
 ### Key concepts
 - Accessible versioned data
@@ -72,4 +74,16 @@ to diminish risk of analyses that are not reproducible
 ### Determine provenance of a file derived from another file
 ### Propagate durable information about data provenance
 ### More general data resources (distributed files, streams)
+
+## Simple formulations of reproducibility condition are challenging
+- Any computational research of the form (result = data + code) must
+be reproducible
+- But we have all encountered situations of the form: "This code used
+to work!  i haven't changed anything!"  But either it fails to run or
+it produces results that are not compatible with previous run.
+- The environment has changed, or the contents of data or code have changed
+to lead to the surprise.
+- Can we avoid this?  Two basic responses: continuous integration with tests (you are told
+immediately when the result is not recovered in a current run) or environment-preserving
+containers (reproducibility truly guaranteed)
 
