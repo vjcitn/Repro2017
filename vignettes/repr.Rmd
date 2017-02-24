@@ -7,6 +7,40 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
 ---
 
+## Basic definitions
+
+1) Analysis = software + data + environment 
+
+2) Reproducible analysis = analysis that can be carried out by independent parties
+
+3) Extensible analysis = analysis supporting independent variations
+
+4) Study = Design + implementation + analysis
+
+5) Replicable study = A study that, when executed by independent parties,
+produces interpretations that are statistically compatible
+
+## Open questions
+
+1) What is an environment for an analysis?
+
+2) What are independent parties? (See Kahneman's etiquette for replication)
+
+3) What are independent variations on an analysis and why are they important?
+
+4) When are two interpretations of related or identical studies statistically compatible?
+
+
+## The three themes underlying reproducibility research
+
+1) providing code and data and environment to independent parties
+to diminish risk of analyses that are not reproducible
+
+2) fortifying criteria of statistical soundness of analyses (study interpretations) to control risk of non-replicability of studies
+
+3) doing 1) and 2) in ways that are cost-effective
+
+
 ## Overview
 ### Key concepts
 - Accessible versioned data
