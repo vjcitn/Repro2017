@@ -1,0 +1,101 @@
+---
+title: "Reproducible research concepts and tools, 2017"
+author: "Vincent J. Carey, stvjc at channing.harvard.edu"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output: ioslides_presentation
+runtime: shiny
+---
+
+```{r setup,echo=FALSE}
+suppressPackageStartupMessages({
+library(png)
+library(grid)
+})
+```
+
+## The three themes underlying reproducibility research
+
+1) providing **code** and **data** and *environment* to **independent parties**
+to **diminish risk** of analyses that are **not reproducible**
+
+2) fortifying **criteria of statistical soundness** of analyses (study interpretations) to **control risk** of **non-replicability** of **studies**
+
+3) doing 1) and 2) in ways that are cost-effective
+
+## Road map of talk
+
+* Basic terminology
+* Reflections on GWAS replication and genetic medicine
+* Replication concepts in the NAS workshop
+* Reproducible research recommendations of ASA
+* Some case studies
+* Some github exercises
+
+
+## Basic definitions
+
+1) Analysis = software + data + environment + invocations
+
+2) Reproducible analysis = analysis that can be carried out by independent parties
+
+3) Extensible analysis = analysis supporting independent variations
+
+4) Study = Design + implementation + analysis
+
+5) Replicable study = A study that, when executed by independent parties,
+produces statistically compatible interpretations
+
+## Open questions
+
+1) What is an environment for an analysis?
+
+2) What are independent parties? (See Kahneman's [concept of "replication etiquette"](https://www.scribd.com/document/225285909/Kahneman-Commentary))
+
+3) What are independent variations on an analysis and why are they important?
+
+4) When are two interpretations of related or identical studies statistically compatible?  Reformulate in terms of the standards of replicability for a given field.  Example: GWAS catalog concept of replicated finding (see, e.g., P. Kraft et al., Stat. Sci. 2009).
+
+## GWAS: [p-values are not created equal](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2865141/)
+
+```{r foo,echo=FALSE}
+im = readPNG("images/KraftGWASreplication.png")
+grid.raster(im,height=1.2)
+```
+
+## GWAS replication recommendations in Kraft et al. 2009
+
+* Test the same marker 
+* Use the same analytic methods; report
+the final model in as much detail as possible so that other investigators
+can judge the fit of that model in other datasets
+* Try to use the same phenotype
+
+* Issues: 
+    * measuring heterogeneity of effects
+    * choosing models and studies for metaanalysis
+    * understanding failure to replicate
+
+## STREGA: genetic association reporting guidelines
+
+```{r foo2,echo=FALSE}
+im = readPNG("images/StregaTitle.png")
+grid.raster(im)
+```
+
+## Guideline 12
+```{r foo3,echo=FALSE}
+im = readPNG("images/strega12.png")
+grid.raster(im)
+```
+
+## Guidelines 13-16
+```{r foo4,echo=FALSE}
+im = readPNG("images/strega13_16.png")
+grid.raster(im)
+```
+
+## Upshots
+
+- Replicability is a live concept for population genetics research
+- Contributions to literature are managed through guidelines
+- The GWAS catalog
