@@ -27,6 +27,8 @@ were [specifically endorsed](http://www.nature.com/ng/journal/v46/n1/full/ng.286
 
 ## Miscellaneous
 
+A 2014 book [Implementing Reproducible Research](https://www.amazon.com/dp/1466561599/ref=rdr_ext_tmb) has been edited by Stodden, Leisch and Peng.
+
 A paper on an [interactive data/code portal](https://www-ncbi-nlm-nih-gov.ezp-prod1.hul.harvard.edu/pubmed/?term=27474121) for clinical trials in [immune tolerance](https://itntrialshare.org).
 
 Daniel Kahneman's [concept of "replication etiquette"](https://www.scribd.com/document/225285909/Kahneman-Commentary) includes rules for engaging research originators by those proposing replication studies.
