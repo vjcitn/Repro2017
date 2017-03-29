@@ -22,6 +22,15 @@ to **diminish risk** of analyses that are **not reproducible**
 
 3) doing 1) and 2) in ways that are cost-effective
 
+## Y. Benjamini, [NAS workshop](https://errorstatistics.files.wordpress.com/2016/02/conceptualizing-measuring-and-studying-reproducibility.pdf) p. 47
+
+**[R]eproducibility is a property of a study, and replicability is a property of a result that can be proved only by inspecting other results of similar experiments. Therefore, the reproducibility of a result from a single study can be assured, and improving the statistical analysis can enhance its replicability.**
+
+My reading:
+
+- assuring reproducibility requires technique by the investigator
+- enhancing replicability requires new approaches to statistical measurement of evidence
+
 ## Road map of talk
 
 * Basic terminology
@@ -31,6 +40,19 @@ to **diminish risk** of analyses that are **not reproducible**
 * Some case studies
 * Some github exercises
 
+## A personal view
+
+* Extensibility and transportability **should not** be divorced from reproducibility
+    - Reproducer/reader should be able to assess effects of modifications to queries and inferences
+
+* Scalability **cannot** be divorced from reproducbility
+    - Can I check a computation that took the author days to create?
+    - Does the work support a [stepwise approach to verification](https://arxiv.org/abs/1409.3531)?
+        - Results are reproducible in detail for a meaningful subproblem
+        - Results are reproducible in detail for a sequence of
+meaningful subproblems of increasing difficulty
+
+* Computable documents are essential elements of cost-effective RR
 
 ## Basic definitions
 
@@ -97,5 +119,70 @@ grid.raster(im)
 ## Upshots
 
 - Replicability is a live concept for population genetics research
-- Contributions to literature are managed through guidelines
-- The GWAS catalog
+- Contributions to literature are managed through voluntary guidelines
+- The EBI/NHGRI GWAS catalog includes a formal replication concept for every reported SNP-phenotype association
+
+## GWAS catalog eligibility
+
+```{r foo5,echo=FALSE}
+im = readPNG("images/gwascat.png")
+grid.raster(im)
+```
+
+## Genetic medical counseling errors
+
+```{r foo6,echo=FALSE}
+im = readPNG("images/exacNEJMtitle.png")
+grid.raster(im)
+```
+
+## Headline
+
+```{r foo7,echo=FALSE}
+im = readPNG("images/exacNYTpic.png")
+grid.raster(im)
+```
+
+## Consequences of error
+
+```{r foo8,echo=FALSE}
+im = readPNG("images/exacNYTtext.png")
+grid.raster(im)
+```
+
+## Moving forward
+
+```{r foo9,echo=FALSE}
+im = readPNG("images/exacUseRecs.png")
+grid.raster(im)
+```
+
+## A view of Exome Aggregation Consortium
+
+```{r foo10,echo=FALSE}
+im = readPNG("images/exacHistosPCA.png")
+grid.raster(im)
+```
+
+## Upshots
+
+- Genetic epidemiology's use of GWAS includes explicit requirement for replication
+- Implementation of the requirement uses the concepts
+    - *combined p-value* for base and replication studies
+    - in absence of combined p-value, separate thresholds of $\log_{10} p < -5$ in two studies
+- More care is needed in assessing evidence of genetic risk in medical applications
+- Accurate interpretation of large-scale aggregation/stratification of genetic findings must become routine
+
+## Some material from the NAS workshop: Benjamini
+
+- Poor replicability of animal phenotyping studies is due to inaccurate reckoning of variability: genotype $\times$ laboratory interactions are present but contribution to variance is not known
+- *Quantitative replicability* is present when **two or more** studies agree on a given finding
+    - For two studies with null hypotheses $H_{01}$, $H_{02}$, replicabilityrequires that the union null $H_{01} \cup H_{02}$ is rejected in favor of the conjunction alternative
+    - [$r$-value](https://arxiv.org/pdf/1502.00088) = $\max(P_1, P_2)$
+    - generalizations to larger syntheses change the character of interpretation: not just summarizing evidence on existence of an effect, but measuring evidence of a **replicable** effect
+
+## Some material from the NAS workshop: Boos
+
+
+## Some material from the NAS workshop: Valen Johnson
+
