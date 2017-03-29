@@ -13,6 +13,20 @@ library(grid)
 })
 ```
 
+## Resource
+
+```{r foocov,echo=FALSE}
+im = readPNG("images/workshopFace.png")
+grid.raster(im)
+```
+
+## Task
+
+```{r footask,echo=FALSE}
+im = readPNG("images/NAStask.png")
+grid.raster(im)
+```
+
 ## The three themes underlying reproducibility research
 
 1) providing **code** and **data** and *environment* to **independent parties**
@@ -52,7 +66,7 @@ My reading:
         - Results are reproducible in detail for a sequence of
 meaningful subproblems of increasing difficulty
 
-* Computable documents are essential elements of cost-effective RR
+* **Computable documents** (rmarkdown, jupyter, ...) are essential elements of cost-effective reproducible research
 
 ## Basic definitions
 
@@ -183,6 +197,46 @@ grid.raster(im)
 
 ## Some material from the NAS workshop: Boos
 
+- Replication condition for a scalar summary index $T$ computed in two experiments: $(T_1, T_2) =_d (T_2, T_1)$
+- $P(T_2 > T_1) = 1/2$, so if $T_1$ is "borderline significant" there is substantial probability that a genuinely replicating experiment will not be "significant"
+- P-values possess statistical variability, yet are seldom reported with intervals or standard errors
+- Replication probability for one-sample normal mean with $n$ *independent* samples
+$$
+RP = 1 - F_{t,n-1,ncp}(F^{-1}_{t,n-1}(1-\alpha))
+$$
 
-## Some material from the NAS workshop: Valen Johnson
+## Boos: Replication probabilities are low for conventional thresholds
 
+```{r foo11,echo=FALSE}
+im = readPNG("images/boosStefRP.png")
+grid.raster(im,width=.95)
+```
+
+## Some material from the NAS workshop: Valen Johnson ([PNAS paper](http://www.pnas.org/content/110/48/19313.full.pdf))
+
+```{r foo12,echo=FALSE}
+im = readPNG("images/johnson1.png")
+grid.raster(im,width=.99)
+```
+
+## Costs of more stringent thresholds: $N_{strong} > 1.7 \times N_{conventional}$
+
+```{r foo13,echo=FALSE}
+im = readPNG("images/johnson2.png")
+grid.raster(im,width=.99)
+```
+
+## Upshots
+
+- Statistical theory for enhancing replicability of analyses of independent experiments is substantial
+- Costs of increasing replicability are non-trivial
+- Preserving the reputation of advanced science may well justify the expenditure
+- Cost-efficient experimental designs are not much discussed in NAS workshop
+
+## Transition: Some case studies in reproducibility
+
+- What I have done or promoted to simplify reproducible and extensible analyses in various domains
+    - Cancer genomics: entering the Duke ovarian cancer fray
+    - Bioconductor: continuous integration
+    - Immune Tolerance Network "trialshare": bridging publication to data and interactive analysis
+    - barca: excavating old code on request
