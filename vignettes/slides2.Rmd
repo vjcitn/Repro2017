@@ -443,7 +443,17 @@ extendDressCheck()
     - attend to licensing issues
     - Bioconductor transitioning to git/github soon!
 
-## More slides
+## Bridging from publication to data
 
-- itntrialshare.org -- we will see how figures in NEJM online can bridge to data and R code
-- github.com/vjcitn/barca -- we will fork this package, make changes, and witness continuous integration
+[Statistical analysis of the RAVE study (NEJM 2013) includes a link to figures and code](http://www.nejm.org.ezp-prod1.hul.harvard.edu/doi/full/10.1056/NEJMoa1213277#t=articleDiscussion)
+
+## Using github and travis-ci
+
+visit and clone github.com/vjcitn/barca with an eye towards contributing unit tests
+
+## Conclusions
+
+- General agreement that code and data access are fundamental to reliable scientific progress
+- Accreditation for data contributions recently addressed in [NEJM Sounding board](http://www.nejm.org/doi/full/10.1056/NEJMsb1616595?query=featured_home)
+- Software usability, reliability and maintenance can be challenging to establish
+- We must work to build awareness of trustworthy concepts of statistical significance in the broad scientific community
