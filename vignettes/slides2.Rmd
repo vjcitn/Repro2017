@@ -239,4 +239,211 @@ grid.raster(im,width=.99)
     - Cancer genomics: entering the Duke ovarian cancer fray
     - Bioconductor: continuous integration
     - Immune Tolerance Network "trialshare": bridging publication to data and interactive analysis
-    - barca: excavating old code on request
+    - barca: excavating old code on request, to github and travis CI
+
+## dressCheck: a package that backs up a book chapter
+
+```{r foo14,echo=FALSE}
+im = readPNG("images/ochsCover.png")
+grid.raster(im,width=.99)
+```
+
+## Discuss: Rebutting a rebuttal
+
+(before)
+
+```{r foo15,echo=FALSE}
+im = readPNG("images/dressmanAttack56.png")
+grid.raster(im,width=.99)
+```
+
+## (after)
+
+```{r foo15b,echo=FALSE}
+im = readPNG("images/dressmanRetraction.png")
+grid.raster(im,width=.99)
+```
+
+
+
+## Starting out
+
+```{r foo16,echo=FALSE}
+im = readPNG("images/careyStoddenCaseStuds.png")
+grid.raster(im,width=.99)
+```
+
+## Basic questions
+
+- What are the numerical data on which the arguments are based?
+- What analysis of this data is in question?
+- How can we offer and respond to criticism, allowing for variations on approach, to help clarify the situation?
+
+Answer: A chapter supported by a Bioconductor package
+
+- Code will be portable
+- If it goes stale, we are warned and can provide fixes 
+
+## Build reports for ExperimentData packages
+
+```{r foo17,echo=FALSE}
+im = readPNG("images/buildHeader.png")
+grid.raster(im,width=.99)
+```
+
+## checking dressCheck
+
+```{r foo18,echo=FALSE}
+im = readPNG("images/dressCheckCI.png")
+grid.raster(im,width=.99)
+```
+
+## How to proceed
+
+- install the package
+- build the vignette
+- compare with chapter contents
+- raise an issue if you disagree
+
+## Beyond selected static graphics
+
+```{r bagbag,echo=FALSE}
+psurv = function (x, digits = max(options()$digits - 4, 3), ...) 
+{
+#
+# obtain p-value for log-rank test
+#
+    saveopt <- options(digits = digits)
+    on.exit(options(saveopt))
+    if (!inherits(x, "survdiff")) 
+        stop("Object is not the result of survdiff")
+    if (!is.null(cl <- x$call)) {
+    }
+    omit <- x$na.action
+    if (length(omit)) {
+    }
+    if (length(x$n) == 1) {
+        z <- sign(x$exp - x$obs) * sqrt(x$chisq)
+        temp <- c(x$obs, x$exp, z, signif(1 - pchisq(x$chisq, 
+            1), digits))
+        names(temp) <- c("Observed", "Expected", "Z", "p")
+        print(temp)
+    }
+    else {
+        if (is.matrix(x$obs)) {
+            otmp <- apply(x$obs, 1, sum)
+            etmp <- apply(x$exp, 1, sum)
+        }
+        else {
+            otmp <- x$obs
+            etmp <- x$exp
+        }
+        df <- (sum(1 * (etmp > 0))) - 1
+        temp <- cbind(x$n, otmp, etmp, ((otmp - etmp)^2)/etmp, 
+            ((otmp - etmp)^2)/diag(x$var))
+        dimnames(temp) <- list(names(x$n), c("N", "Observed", 
+            "Expected", "(O-E)^2/E", "(O-E)^2/V"))
+        uu <- 1 - pchisq(x$chisq, df)
+    }
+    uu
+}
+
+extendDressCheck = function() {
+suppressPackageStartupMessages({
+  library(survival)
+  library(shiny)
+  library(dressCheck)
+  library(chron)
+})
+  data(E2F3sig.probes)
+  data(Src.probes)
+  tokeep = unique(c(E2F3sig.probes, Src.probes))
+  if (!exists("corrp116")) data(corrp116)
+  tokeep = intersect(tokeep, rownames(exprs(corrp116)))
+  library(hgu133plus2.db)
+suppressMessages({
+  s133 = select(hgu133plus2.db, 
+     keys=tokeep, keytype="PROBEID", columns=c("SYMBOL")) 
+})
+  pid = s133[,1]
+  names(pid) = s133[,2]
+  drop = which(is.na(names(pid)))
+  pid = pid[-drop]
+  pid = pid[order(names(pid))]
+  npid = names(pid)
+
+fixup = function(vec) {
+  rgt = c(vec, vec[length(vec)])
+  lef = c("<", paste(vec, "-", sep=""))
+  lef = sub(paste(vec[length(vec)],"-",sep=""), ">", lef)
+  paste(lef,rgt, sep="")
+}
+
+dateStrat = function(chr, nstrat=3) {
+ ps = (1:nstrat)/nstrat
+ cuts = c(ps[-length(ps)])
+ qs = quantile(chr, cuts)
+ intervals = fixup(as.character(qs))
+ tags = rep(" ", length(chr))
+ for (i in 1:length(qs)) 
+  tags[ which(chr < qs[i] & tags == " ") ] = intervals[i]
+ tags[ which(chr >= qs[i]) ] = intervals[length(qs)+1]
+ ordered(tags, levels=intervals)
+}
+
+  ui = fluidPage(
+        sidebarPanel(
+         helpText("Interactive analysis of Dressman et al. JCO 2007 data as discussed in Carey and Stodden 2010"),
+         helpText(" "),
+         helpText("Select a gene for plotting expression against sample date"),
+         selectizeInput("insym", "input", choices=npid, selected="RPS11"),
+         helpText("Pick a number of date strata for logrank/K-M plots (for platinum non-responders)"),
+         radioButtons("numstrat", "# date strata", choices=2:5, selected=2)
+        ),
+        mainPanel(
+         tabsetPanel(
+          tabPanel("Expr Confounding", plotOutput("confplot")),
+          tabPanel("Surv Confounding", plotOutput("survplot"))
+         )
+        )
+       )
+  server = function(input, output, session) {
+    output$chk = renderText({input$insym})
+    output$confplot = renderPlot( {
+               an = as.numeric
+               probe = pid[input$insym]
+               plot(an(exprs(corrp116[probe,]))~chron(corrp116$rundate), main="(a)",
+        xlab="array run date", ylab=paste("RMA+SFR expression of", input$insym))
+               } )
+    output$survplot = renderPlot( {
+        num = as.numeric(input$numstrat)
+        CC = cut(chron(corrp116$rundate), num) #input$numstrat)
+        dstra = dateStrat(chron(corrp116$rundate), num)
+        with(pData(corrp116), d0 <<- survdiff(Surv(Survival, dead)~dstra,
+        subset=CR==0))
+    
+        with(pData(corrp116), plot(survfit(Surv(Survival, dead)~dstra,
+        subset=CR==0),col=1:num, lwd=3,
+        xlab="Months", ylab="survival (%)", main="(b)"))
+        text(37,.03, paste("logrank p=", round(psurv(d0),3)))
+        legend(70, .8, lty=1, lwd=3, col=1:num, legend=levels(dstra))
+        } )
+  }
+  shinyApp(ui, server)
+}
+extendDressCheck()
+```
+
+## Upshots
+
+- Debates about contentious analyses involve software, data, and interpretation
+- The **identity of the data** can be hard to pin down, so, when feasible, place it in a versioned package
+- Include (and explain) code underlying interpretations, and provide durable assurance of runnability through **continuous integration**
+- **Socialize** the data and code through github so that interested parties can raise issues, fork, issue pull requests
+    - attend to licensing issues
+    - Bioconductor transitioning to git/github soon!
+
+## More slides
+
+- itntrialshare.org -- we will see how figures in NEJM online can bridge to data and R code
+- github.com/vjcitn/barca -- we will fork this package, make changes, and witness continuous integration
